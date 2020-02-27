@@ -57,6 +57,7 @@ class Page1 extends StatelessWidget {
                 'assets/swdhh.png',
                 scale: 3.5,
                 width: MediaQuery.of(context).size.width / 10,
+//                height: MediaQuery.of(context).size.height / 5,
               ),
               Stack(children: <Widget>[
                 Container(

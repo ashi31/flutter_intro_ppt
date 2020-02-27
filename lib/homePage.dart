@@ -21,6 +21,9 @@ class _HomePageState extends State<HomePage> {
         child: Container(
           child: PageView(
             controller: controller,
+            onPageChanged: (page) {
+              i = page;
+            },
             children: <Widget>[
               Page1(),
               Page2(),
@@ -38,7 +41,7 @@ class _HomePageState extends State<HomePage> {
               Page14(),
               Page15(),
               Page16(),
-              Page17()
+              Page17(),
             ],
           ),
         ),
@@ -47,11 +50,14 @@ class _HomePageState extends State<HomePage> {
           if (key.runtimeType.toString() == 'RawKeyDownEvent') {
             if (key.logicalKey.debugName == 'Arrow Right' && i != 16) {
               i++;
-              print(i);
-              controller.jumpToPage(i);
+              controller.animateToPage(i,
+                  duration: Duration(milliseconds: 5),
+                  curve: Cubic(1, 1, 1, 1));
             } else if (key.logicalKey.debugName == 'Arrow Left' && i != 0) {
               i--;
-              controller.jumpToPage(i);
+              controller.animateToPage(i,
+                  duration: Duration(milliseconds: 5),
+                  curve: Cubic(1, 1, 1, 1));
             }
           }
         });

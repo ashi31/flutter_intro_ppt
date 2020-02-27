@@ -24,10 +24,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Scaffold(
-//        appBar: AppBar(
-//          title: Text('Introduction To Flutter'),
-//          centerTitle: true,
-//        ),
           backgroundColor: Color.fromRGBO(86, 83, 234, 1),
           body: HomePage(),
         ),
